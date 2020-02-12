@@ -1,13 +1,9 @@
 import React from 'react';
 
-import GlobalStyle from './styles/global';
-import Header from './components/Header';
+import Routes from './routes'
 
 const App = () => (
-  <div className="App">
-    <GlobalStyle />
-    <Header />
-  </div>
+  <Routes />
 );
 
 export default App;
