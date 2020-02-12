@@ -1,13 +1,11 @@
 import React from 'react';
 
-import GlobalStyle from '../../styles/global';
-import Header from '../../components/Header';
+
+import { Container } from './styles'
 
 const Main = () => (
   <>
-    <GlobalStyle />
-    <Header />
-    <div>Hello</div>
+    <Container>Hello</Container>
   </>
 );
 
