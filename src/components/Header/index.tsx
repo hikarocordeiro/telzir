@@ -1,11 +1,13 @@
 import React from 'react';
 
+import { FaPhoneSquare } from 'react-icons/fa';
+
 import { Container } from './styles'
 
 const Header: React.FC = () => {
   return (
     <Container>
-      Telzir
+      <FaPhoneSquare /> Telzir
     </Container>
   )
 }
