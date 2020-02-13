@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
+
+import { Plan } from '../../store/ducks/plans/types';
+import { ApplicationState } from '../../store';
+import * as PlansActions from '../../store/ducks/plans/actions';
 
 import { Form, SubmitButton } from './styles';
 
-export default class PlanForm extends Component {
+interface StateProps {
+  plans: Plan[]
+}
+
+interface DispatchProps {
+  planRequest(): void
+}
+
+type Props = StateProps & DispatchProps;
+
+class PlanForm extends Component<Props> {
+  componentDidMount() {
+    const { planRequest } = this.props;
+
+    planRequest()
+  }
 
   render() {
+    const { plans } = this.props;
     return (
       <>
         <Form onSubmit={()=>{}}>
@@ -24,6 +46,9 @@ export default class PlanForm extends Component {
           plano:
           <select>
             <option></option>
+            { plans.map(plan => (
+              <option id={plan.id.toString()} value={plan.id.toString()}>{plan.name}</option>
+            )) }
           </select>
           <SubmitButton disabled>
             Buscar Plano
@@ -33,3 +58,12 @@ export default class PlanForm extends Component {
     );
   }
 }
+
+const mapStateToProps = (state: ApplicationState) => ({
+  plans: state.plans.data,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(PlansActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlanForm);

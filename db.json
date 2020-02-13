@@ -1,0 +1,15 @@
+{
+  "plans": [
+    { "id": 1, "name": "FaleMais 30", "minutes": 30 },
+    { "id": 2, "name": "FaleMais 60", "minutes": 60 },
+    { "id": 3, "name": "FaleMais 120", "minutes": 120 }
+  ],
+  "prices": [
+    { "id": 1, "origin": "011", "destination": "016", "cost": 1.9 },
+    { "id": 2, "origin": "016", "destination": "011", "cost": 2.9 },
+    { "id": 3, "origin": "011", "destination": "017", "cost": 1.7 },
+    { "id": 4, "origin": "017", "destination": "011", "cost": 2.7 },
+    { "id": 5, "origin": "011", "destination": "018", "cost": 0.9 },
+    { "id": 6, "origin": "018", "destination": "011", "cost": 1.9 }
+  ]
+}
