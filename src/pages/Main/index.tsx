@@ -1,19 +1,41 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { Container, Plan } from './styles';
+import { Card } from '../../store/ducks/cards/types';
+
+import { ApplicationState } from '../../store';
 
 import PlanForm from '../../components/PlanForm';
 import PlanCard from '../../components/PlanCard';
 
-const Main = () => (
-  <Container>
-    <PlanForm />
+import { Container, Plan } from './styles';
 
-    <Plan>
-      <PlanCard />
-      <PlanCard />
-    </Plan>
-  </Container>
-);
+interface StateProps {
+  cards: Card[]
+}
 
-export default Main;
+type Props = StateProps;
+
+class Main extends Component<Props> {
+  render() {
+    const { cards } = this.props;
+    return (
+      <Container>
+        <PlanForm />
+
+        <Plan>
+          { cards && cards.map(card => (
+            <PlanCard key={card.title} title={card.title} price={card.value}/>
+            )) }
+        </Plan>
+      </Container>
+    );
+  }
+}
+
+const mapStateToProps = (state: ApplicationState) => ({
+  cards: state.cards.data
+});
+
+export default connect(mapStateToProps)(Main);
+

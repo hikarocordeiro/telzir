@@ -31,3 +31,10 @@ export const SubmitButton = styled.button.attrs({
   padding: 10px 15px;
   border-radius: 4px;
 `;
+
+export const Error = styled.div`
+  margin: 10px 0px;
+  padding:12px;
+  color: #D8000C;
+  background-color: #FFD2D2;
+`;
