@@ -7,7 +7,9 @@ import { Container } from './styles'
 const Header: React.FC = () => {
   return (
     <Container>
-      <FaPhoneSquare /> Telzir
+      <span>
+        <FaPhoneSquare /> &nbsp;Telzir
+      </span>
     </Container>
   )
 }
