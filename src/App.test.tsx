@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('form exists', () => {
+test('App contains form', () => {
   const { getByRole } = render(<App />);
-  const element = getByRole('form');
-  expect(element).toBeInTheDocument();
+  const linkElement = getByRole('form');
+  expect(linkElement).toBeInTheDocument;
 });
