@@ -85,7 +85,7 @@ $ cd telzir
 $ yarn install
 
 # Run json-server
-$ yarn json-server --watch server.json --port 3333
+$ yarn json-server --watch db.json --port 3333
 
 # Run the app (in a new terminal)
 $ yarn start
