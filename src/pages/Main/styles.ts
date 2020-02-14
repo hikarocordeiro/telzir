@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  margin: 80px auto;
+  margin: 30px auto;
 `;
 
 export const Plan = styled.div`
