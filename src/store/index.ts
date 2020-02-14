@@ -1,12 +1,15 @@
 import { createStore, applyMiddleware, Store } from 'redux';
 import createSagaMiddleware from 'redux-saga';
+
 import { PlansState } from './ducks/plans/types';
+import { PricesState } from './ducks/prices/types';
 
 import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
 
 export interface ApplicationState {
-  plans: PlansState
+  plans: PlansState,
+  prices: PricesState
 }
 
 const sagaMiddleware = createSagaMiddleware();
