@@ -6,6 +6,7 @@ import { FaExclamationTriangle } from 'react-icons/fa';
 
 import { Plan } from '../../store/ducks/plans/types';
 import { Price } from '../../store/ducks/prices/types';
+import { Card } from '../../store/ducks/cards/types';
 
 import { ApplicationState } from '../../store';
 
@@ -26,7 +27,7 @@ interface StateProps {
 interface DispatchProps {
   planRequest(): void,
   priceRequest(): void,
-  setCardsInfo([]): void
+  setCardsInfo(array: Card[]): void
 }
 
 interface State {
@@ -168,7 +169,6 @@ class PlanForm extends Component<Props, State> {
 
 const mapStateToProps = (state: ApplicationState) => ({
   plans: state.plans.data,
-  //origin: state.prices.data.map(price => price.origin),
   origin: [...Array.from(new Set(state.prices.data.map(price => price.origin)))],
   prices: state.prices.data,
 });
